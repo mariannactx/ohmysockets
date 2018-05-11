@@ -1,0 +1,68 @@
+.btn-group-vertical > .btn + .btn, .btn-group-vertical > .btn + .btn-group, .btn-group-vertical > .btn-group + .btn, .btn-group-vertical > .btn-group + .btn-group {
+    margin-top: -2px;
+    margin-left: 0
+}
+
+.dropdown-toggle:hover .dropdown-menu{
+    display:block
+}
+
+body.row{
+    margin:0;
+}
+
+html, body, header, main{
+    height: 100%;
+}
+
+
+
+body{
+    overflow: hidden;
+}
+
+aside, main{
+    position: fixed;
+}
+
+main{
+    overflow:auto
+}
+
+section{
+    min-height: 100%;
+    padding-top:45px;
+    padding-left:45px;
+}
+
+article{
+    padding-top:20px;
+}
+
+#logo{
+    max-width: 50%;
+    margin:20px auto;
+    display: block;
+}
+
+ul.navbar-nav{
+    list-style-type: decimal;
+}
+
+ul ul{
+    list-style-type: lower-latin;
+}
+
+
+.navbar-dark .navbar-nav .nav-item {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-dark .navbar-nav .nav-item:hover, .navbar-dark .navbar-nav .nav-item:focus {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.card-img {
+    padding: 10px;
+    text-align: center;
+}
