@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
     <link rel="stylesheet" href="css/journal.css"/>
     <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/collapse.js"></script>
 </head>
 <body class="row">
-    <header class="col-2 bg-info">
-        <nav class="navbar navbar-dark">
+    <header class="col-lg-2 bg-info">
+        <nav class="navbar navbar-dark navbar-expand-lg">
             <img id="logo" src="img/websockets_logo.png"/>
-            <ul class="navbar-nav flex-column">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu-toggler">
+            <ul class="navbar-nav mr-auto flex-column">
                 <li class="nav-item">
                     <a class="nav-link" href="#o-framework">
                     O framework
@@ -48,11 +55,12 @@
                     </a>
                 </li>
             </ul>
+            </div>
         </nav>
     </header>
-    <main class="col-10">
+    <main class="col-lg-10">
         <section id="o-framework">
-            <h1 class="display-3">O framework</h1>
+            <h1 class="display-4">O framework</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
 
@@ -64,7 +72,7 @@
         </section>
 
         <section id="documentacao">
-            <h1 class="display-3">Documentação</h1>
+            <h1 class="display-4">Documentação</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
 
@@ -127,13 +135,13 @@
         </section>
 
         <section id="demo">
-            <h1 class="display-3">Demo</h1>
+            <h1 class="display-4">Demo</h1>
             <hr class="my-4">
             <video src="index.html"></video>
         </section>
 
         <section id="creditos">
-            <h1 class="display-3">Créditos</h1>
+            <h1 class="display-4">Créditos</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
 

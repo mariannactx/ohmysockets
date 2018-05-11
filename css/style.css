@@ -1,28 +1,10 @@
-.btn-group-vertical > .btn + .btn, .btn-group-vertical > .btn + .btn-group, .btn-group-vertical > .btn-group + .btn, .btn-group-vertical > .btn-group + .btn-group {
-    margin-top: -2px;
-    margin-left: 0
-}
-
-.dropdown-toggle:hover .dropdown-menu{
-    display:block
-}
-
-body.row{
-    margin:0;
-}
-
 html, body, header, main{
     height: 100%;
 }
 
-
-
-body{
+body.row{
     overflow: hidden;
-}
-
-aside, main{
-    position: fixed;
+    margin:0;
 }
 
 main{
@@ -41,28 +23,63 @@ article{
 
 #logo{
     max-width: 50%;
-    margin:20px auto;
-    display: block;
+    margin: 20px 0;
 }
 
 ul.navbar-nav{
     list-style-type: decimal;
+    padding: 0 0 0 20px;
 }
 
 ul ul{
     list-style-type: lower-latin;
 }
 
-
 .navbar-dark .navbar-nav .nav-item {
     color: rgba(255, 255, 255, 0.5);
 }
 
-.navbar-dark .navbar-nav .nav-item:hover, .navbar-dark .navbar-nav .nav-item:focus {
+.navbar-dark .navbar-nav .nav-item:hover,
+.navbar-dark .navbar-nav .nav-item:focus {
     color: rgba(255, 255, 255, 0.75);
 }
 
 .card-img {
     padding: 10px;
     text-align: center;
+}
+
+.card-img img{
+    max-width: 90%;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg{
+        flex-flow: column;
+    }
+}
+
+@media (max-width: 992px) {
+    header.col-lg-2{
+        height: auto;
+        min-height: 96px;
+        position: fixed;
+        text-align: left;
+        z-index:99;
+    }
+
+    main{
+        margin-top:96px;
+        padding-bottom: 30px;
+    }
+
+    section{
+        padding-top:116px;
+        padding-left:0;
+        min-height: 0;
+    }
+
+    #logo{
+        height: 40px;
+    }
 }
