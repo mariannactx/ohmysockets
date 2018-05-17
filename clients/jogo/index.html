@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/ui/style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+</head>
+<body>
+<div class="main-container">
+    <header class="block">
+        <h2>Nome do jogo</h2>
+        <a href="ranking.php"><img id="ranking" src="img/trophy.png" /></a>
+    </header>
+
+    <div class="left-container container">
+        <div class="menu-box block" onclick="return choosePlayer('keyboard')">
+            <h2 class="titular">JOGAR NO TECLADO</h2>
+            <a><img src="img/keyboard.png"></a>
+        </div>
+    </div>
+    <div class="right-container container">
+        <div class="menu-box block" onclick="return choosePlayer('gamepad')">
+            <h2 class="titular">OU NO CONSOLE</h2>
+            <a><img src="img/gamepad.png"></a>
+        </div>
+    </div>
+    <div class="modal-container container">
+        <form id="form-player" method="POST" action="" onsubmit="newPlayer(this);">
+            <div class="enter-user-name block">
+                    <div class="input-container">
+                        <input type="text" name="apelido" placeholder="apelido" class="email text-input">
+                        <div class="input-icon envelope-icon-acount"><span class="fontawesome-user scnd-font-color"></span></div>
+                    </div>
+                    <div class="input-container">
+                        <div class="base-colors">
+                            <input type="radio" name="cor" class="color" value="52,152,219" style="background-color: rgb(52,152,219);" />
+                            <input type="radio" name="cor" class="color" value="46,204,113" style="background-color: rgb(46,204,113);" />
+                            <input type="radio" name="cor" class="color" value="230,126,34" style="background-color: rgb(230,126,34);" />
+                            <input type="radio" name="cor" class="color" value="231,76,60"  style="background-color: rgb(231,76,60);"  />
+                        </div>
+                    </div>
+                <button type="submit" class="subscribe button">JOGAR!</button>
+            </div>
+        </form>
+    </div>
+    <img id="logo" src="img/logo.png">
+</div>
+</body>
+</html>

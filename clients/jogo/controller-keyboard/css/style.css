@@ -1,0 +1,142 @@
+body{
+    text-align: center;
+}
+
+#keyboard {
+    font-family: sans-serif;
+    display:inline-block;
+    margin: 10% auto;
+    box-shadow: 0 0.2em 0 0.05em #222;
+}
+
+.row {
+    display: block;
+    height: 3em;
+    margin: 0.2em;
+    text-align: center;
+}
+
+.row > * {
+    position: relative;
+    background: #394264;
+    text-align: center;
+    color: #394264;
+    float: left;
+    border-radius: 0.3em;
+    margin: 0.2em;
+    padding: 0.2em;
+    width: 3.3em;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid  #21273e;
+    box-shadow: 0 0.2em 0 0.05em #272e46;
+    border-bottom-color: #313131;
+}
+
+.row > * > *{color: #394264;}
+
+.active, .active > * {
+    color: #394264;
+}
+
+.active{
+    background: #ddd;
+    color: #394264;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0.2em 0 0.05em rgb(36, 43, 73);
+}
+
+.row > div[data-pressed],
+.row > div.active:active {
+    background: #ccc;
+    color: #515C8C;
+    position: relative;
+    top: 0.2em;
+    box-shadow: 0 0 0 0.05em #394264;
+}
+
+.row > div[data-pressed] > *,
+.row > div.active:active > *{
+    color: #515C8C;
+}
+
+.h1 {
+    height: 1.7em;
+    line-height: 1.4em;
+}
+
+.h1 > div {
+    width: 3.49em;
+}
+
+.h3 {
+    height: 3.3em;
+}
+
+.w3 {
+    width: 4.6em;
+}
+
+.w4 {
+    width: 6em;
+}
+
+.w5 {
+    width: 6.5em;
+}
+
+.w6 {
+    width: 8.3em;
+}
+
+.space {
+    width: 18em;
+}
+
+.letter {
+    line-height: 2.8em;
+}
+
+.bottom-left > * {
+    position: absolute;
+    text-align: left;
+    bottom: 0.4em;
+    left: 0.4em;
+}
+
+.bottom-right > * {
+    position: absolute;
+    text-align: right;
+    bottom: 0.4em;
+    right: 0.4em;
+}
+
+.fn > * {
+    font-size: 0.6em;
+    line-height: 1em;
+    padding-top: 1.2em;
+    padding-right: 0.2em;
+    text-align: right;
+    float: right;
+}
+
+.word > * {
+    font-size: 0.8em;
+}
+
+.arrow > * {
+    font-size: 0.5em;
+    line-height: 2.7em;
+}
+
+.arrow {
+    height: 1.8em;
+    margin: 1.7em .34em;
+    line-height: 0.5em;
+}
+
+.arrow.double {margin: 0;padding: 0;}
+.arrow.double.arrow-down {
+    margin: 1.7em 0 0 -3.3em;
+}

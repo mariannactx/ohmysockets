@@ -1,0 +1,145 @@
+h2{
+    margin: 0;
+    padding: 0 20px;
+    display: inline-block;
+    line-height: 80px;
+}
+
+.container {
+    float: left;
+    width: 50%;
+    margin: 0;
+    text-align: center;
+}
+
+.block {
+    background: #394264;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.left-container {
+    margin: 0;
+}
+
+.full-container{
+    width: 100%;
+    text-align: left;
+}
+.modal-container.container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(31, 37, 61, 0.88);
+    display:none;
+}
+
+.enter-user-name {
+    width: 300px;
+    margin: 20% auto 0 auto;
+    padding: 20px 0 ;
+    position: relative;
+    z-index: 999;
+    text-align: left;
+}
+
+.base-colors{
+    text-align: center;
+}
+
+.base-colors .color{
+    width: 50px;
+    height: 50px;
+    display:inline-block;
+    border-radius: 100%;
+    margin: 5px;
+    -webkit-appearance: none;
+}
+
+.subscribe.button{
+    background: #11a8ab;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    border: none;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.menu-box {
+    height: 360px;
+    transition: transform .5s;
+}
+
+.left-container .menu-box:hover,
+.right-container .menu-box:hover{
+    transform: scale(1.04);
+}
+
+img#logo {
+    position: absolute;
+    width: 115px;
+    border-radius: 100%;
+    left: 50%;
+    top: 146px;
+    margin: 0 0 0 -62px;
+}
+
+img#ranking{
+    float:right;
+    margin: 20px;
+    height: 50%;
+}
+.menu-box .titular {
+    background: #11a8ab;
+    margin-bottom: 20px;
+}
+.full-container .menu-box{
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.full-container .menu-box .menu-box-tab{
+    height: auto;
+    line-height: 29pt;
+    font-size: 11pt;
+    padding: 5px 0;
+}
+
+.full-container .menu-box .menu-box-tab .icon{
+    font-size: 11pt;
+}
+
+.full-container .menu-box .titular {
+    margin: 0;
+}
+
+.full-container .menu-box li{
+    padding: 10px;
+    height: auto;
+}
+
+#ranking .coins,
+#ranking .monsters{
+    float:right;
+    margin: 0 5px;
+    background: #50597b;
+    border-radius: 100%;
+    padding: 6pt;
+    width: 26pt;
+    height: 26pt;
+    text-align: center;
+    line-height: 15pt;
+}
+
+#ranking .coins{
+    color: gold;
+
+}
+
+#ranking .monsters{
+    color: #6f9ea1;
+}
