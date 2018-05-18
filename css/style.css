@@ -69,11 +69,11 @@ ul ul{
     }
 
     main{
-        margin-top:96px;
+        padding-top:96px;
         padding-bottom: 30px;
     }
 
-    section{
+    section, section article{
         padding-top:116px;
         padding-left:0;
         min-height: 0;
