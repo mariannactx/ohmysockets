@@ -14,10 +14,10 @@ function init() {
     try {
         socket = new WebSocket(host);
 
-        socket.onopen    = function(msg) {};
-        socket.onclose   = function(msg) {};
-        socket.onmessage = function(msg) {
-            msg = JSON.parse(msg.data);
+        socket.onopen    = function(ev) {};
+        socket.onclose   = function(ev) {};
+        socket.onmessage = function(ev) {
+            msg = JSON.parse(ev.data);
 
             switch(msg.type){
                 case "change": changeFace(msg.user, msg.face); break;

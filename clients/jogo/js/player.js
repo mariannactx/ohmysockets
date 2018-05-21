@@ -16,12 +16,12 @@ function initPlayer() {
 
         socket = new WebSocket(host);
 
-        socket.onopen = function(msg) {};
-        socket.onclose = function(msg) {};
+        socket.onopen = function(ev) {};
+        socket.onclose = function(ev) {};
 
-        socket.onmessage = function(msg) {
+        socket.onmessage = function(ev) {
 
-            msg = JSON.parse(msg.data);
+            msg = JSON.parse(ev.data);
 
             if(msg.type == "connected"){
 

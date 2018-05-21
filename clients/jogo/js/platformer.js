@@ -10,10 +10,10 @@ function initGame() {
     try {
         socket = new WebSocket(host);
 
-        socket.onopen    = function(msg) {};
-        socket.onclose   = function(msg) {};
-        socket.onmessage = function(msg) {
-            msg = JSON.parse(msg.data);
+        socket.onopen    = function(ev) {};
+        socket.onclose   = function(ev) {};
+        socket.onmessage = function(ev) {
+            msg = JSON.parse(ev.data);
 
             switch (msg){
                 case "move": move(msg.user, msg.key, msg.down); break;
