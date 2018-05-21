@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <title>ohmysockets!</title>
     <link rel="stylesheet" href="css/journal.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <script src="js/jquery.js"></script>
@@ -13,50 +13,53 @@
 <body class="row">
     <header class="col-lg-2 bg-info">
         <nav class="navbar navbar-dark navbar-expand-lg">
-            <img id="logo" src="img/websockets_logo.png"/>
+            <a class="nav-link text-light text-center" href="#o-framework">
+                <img id="logo" src="img/omskts.png"/>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-toggler">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menu-toggler">
             <ul class="navbar-nav mr-auto flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" href="#o-framework">
-                    O framework
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#documentacao">
-                    Documentação
+                        - <br/>Documentação
                     </a>
                     <ul>
                         <li class="nav-item">
                             <a class="nav-link" href="#instalacao">
-                                Instalação
+                                . Requisitos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#instalacao">
+                                . Downloads
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#inicializacao">
-                            Inicialização
+                                . Inicialização
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#como-funciona">
-                                Como funciona
+                                . O básico
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#exemplos">Exemplos</a>
+                            <a class="nav-link" href="#exemplos">
+                                - <br/>Exemplos</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#demo">
-                        Demo
+                        - <br/>Demo
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#creditos">
-                    Créditos
+                        - <br/>Créditos
                     </a>
                 </li>
             </ul>
@@ -65,36 +68,59 @@
     </header>
     <main class="col-lg-10">
         <section id="o-framework">
-            <h1 class="display-4">O framework</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <h1 class="display-4">ohmysockets!</h1>
+            <small class="text-muted">Abreviação para "oh my god, it's so simple to use websockets!".</small>
+            <p class="lead">
+                É um micro framework PHP simples e rápido para comunicação dentro de redes locais. Permite criar uma conexão persistente e bidirecional para ser utilizada em sua aplicação web sem complicações.
+            </p>
             <hr class="my-4">
+            <h3>Web, persistente e bidirecional</h3>
+            <p> <i>Websockets</i> é o recurso que tornou possível usar o <i>browser</i> para abrir uma conexão que se mantém <i>sempre aberta e disponível</i> através da qual podemos enviar e receber informações <i>simultaneamente e sem interrupções</i>.</p>
+            <h3>Módulos</h3>
 
-            <h3>Pra quê?</h3>
-            <p>Serve para kakaka kikiki</p>
+            <h5>Servidor</h5>
+            <p>Cria e mantém nossa conexão além de gerenciar os usuários que se conectarem ao nosso servidor. Inicializado com um quase nada de comandos no terminal.</p>
+            <h5>Cliente</h5>
+            <p>Apresenta <b>dois exemplos</b> simples e reutilizáveis para quem quer saber a opinião de sua audiência em tempo real ou competir com os amigos num jogo de plataforma.</p>
 
-            <h3>O que vem nele?</h3>
-            <p>Vem os módulos cliente e servidor</p>
         </section>
 
         <section id="documentacao">
             <h1 class="display-4">Documentação</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
             <hr class="my-4">
 
             <article id="instalacao">
-                <div class="card border-primary">
-                    <h2 class="card-header bg-info text-white">Instalação</h2>
+                <div class="card border-light">
+                    <h2 class="card-header text-info">Requisitos</h2>
                     <div class="card-body">
-                        <button class="btn btn-primary">
-                            Download
+                        <ul>
+                            <li>Apache e PHP 7 (<small>veja um tutorial sobre <a href="tutorial">como instalar um servidor web</a></small>)</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <article id="instalacao">
+                <div class="card border-light">
+                    <h2 class="card-header text-info">Downloads</h2>
+                    <div class="card-body">
+                        <button class="btn btn-outline-danger">
+                            Módulo servidor
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            Módulo cliente
+                        </button>
+                        <button class="btn btn-outline-danger">
+                            Pacote completo!
                         </button>
                     </div>
                 </div>
             </article>
 
             <article id="inicializacao">
-                <div class="card border-primary">
-                    <h2 class="card-header bg-info text-white">Inicialização</h2>
+                <div class="card border-light">
+                    <h2 class="card-header text-info">Inicialização</h2>
                     <div class="card-body">
                         <p>
                             Entrar na pasta <kbd>cd pasta</kbd><br/>
@@ -106,29 +132,66 @@
             </article>
 
             <article id="como-funciona">
-                <div class="card border-primary">
-                    <h2 class="card-header bg-info text-white">Como funciona</h2>
+                <div class="card border-light">
+                    <h2 class="card-header text-info">O básico</h2>
                     <div class="card-body">
-                        <p>
-                            Entrar na pasta <kbd>cd pasta</kbd><br/>
-                            Inicializar conexão <kbd> php server.php</kbd><br/>
-                            <kbd> php server.php</kbd>
+                        <h4>A extensão sockets do PHP</h4>
+                        <small><a href="https://secure.php.net/manual/pt_BR/book.sockets.php">manual oficial da extensão</a></small>
+                        <p>O construtor da nossa classe abstrata WebsocketServer é o responsável por criar a conexão. Mais especificamente, <i>cria</i>, <i>configura</i>, <i>torna acessível</i> e <i>ouve</i> um <i>resource do tipo socket</i>.</p>
 
-                            onmessage
-                            onclose
-                            onconnect
+                        <pre>
 
-                            as mensagens sempre são recebidas com a identificação do
-                            usuário que as enviou
-                            intval(socket)
+$this->master = socket_create(...);
+
+socket_set_option($this->master, ...);
+socket_bind($this->master, <b>$addr</b>, <b>$port</b>);
+socket_listen($this->master, 10);
+
+$this->sockets['m'] = $this->master;
+                        </pre>
+
+                        <p>Onde <kbd>$addr</kbd> é o IP da máquina onde o servidor está e <kbd>$port</kbd> é uma porta disponível no nosso servidor - que pode ser aleatória. Essas informações são fornecidas no script run.php que vai ser executado via terminal (ou da maneira que você preferir):
                         </p>
+
+                        <pre>
+
+$server = new Server("192.168.0.0", '11111');
+$server->run();
+                        </pre>
+
+                        <p>Se aparecer uma mensagem que começa com <b><i>"Server started"</i></b> deu tudo certo! O servidor está ouvindo requisições através da porta que você escolheu.</p>
+
+                        <h4>A API Websockets</h4>
+                        <small><a href="https://html.spec.whatwg.org/multipage/web-sockets.html">especificação oficial da API</a></small>
+                        <p> Uma vez iniciada a conexão, nossa aplicação poderá enviar e receber dados através dela, utilizando a <i>API Websockets</i> e seus eventos com <i>javascript</i>.</p>
+                        <pre>
+
+socket = new WebSocket("ws://192.168.0.0:11111");
+
+socket.onopen    = function(ev) {};
+socket.onclose   = function(ev) {};
+socket.onmessage = function(ev) {
+    msg = JSON.parse(ev.data);
+};
+
+socket.send('{"prop":"value"}'); //string em formato JSON
+                        </pre>
+                        <p>É realmente muito simples: <kbd>onopen</kbd> acontece assim que a conexão é estabelecida, <kbd>onmessage</kbd> é disparada sempre que chegar novos dados e <kbd>onclose</kbd> quando a conexão for fechada pelo cliente ou pelo servidor.
+                        </p>
+                        <p><span class="badge badge-pill badge-danger">Atenção!</span> O evento <kbd>onmessage</kbd> traz um objeto do tipo MessageEvent, diferente das demais. A propriedade <kbd>data</kbd> contém os dados recebidos em uma string no formato JSON. Como implementação do framework, sempre possui a propriedade <kdb>user</kdb> como identificação do usuário que enviou a mensagem, até mesmo quando é o servidor. É utilizado <i>um número único com a função do PHP <kbd>uniqid()</kbd> </i> para identificar a origem da mensagem. Você pode modificar isso sobrescrevendo o método <kdb>setId()</kdb> da classe <kdb>User</kdb>, para utilizar um número incremental do seu banco de dados, por exemplo.
+                        </p>
+
+                        <h4>O protocolo websockets</h4>
+                        <p>Perceba que a url utilizada na API não começa com o habitual <kbd>http://</kbd>, mas com <kbd>ws://</kbd></p>.
+                        <p> HTTP com upgrade para WS </p>
+                        <video width="100%" src="vid/websockets-network-ratchet.mp4" controls></video>
                     </div>
                 </div>
             </article>
 
             <article id="exemplos">
-                <div class="card border-primary">
-                    <h2 class="card-header bg-info text-white">Exemplos</h2>
+                <div class="card border-light">
+                    <h2 class="card-header text-info">Exemplos</h2>
                     <div class="card-body">
                         <h3>Carinhas</h3>
                         <p class="bg-dark card-img">
@@ -137,10 +200,6 @@
                         <p>
                             For example, <code>&lt;section&gt;</code> should be wrapped as inline.
                         </p>
-
-                        <button class="btn btn-primary">
-                            Download
-                        </button>
 
                         <hr class="my-4">
                         <h3>Exemplo: Jogo multiplayer</h3>
@@ -152,10 +211,6 @@
                             For example, <code>&lt;section&gt;</code> should be wrapped as inline.
                             <kbd> php server.php </kbd>
                         </p>
-
-                        <button class="btn btn-primary">
-                            Download
-                        </button>
                     </div>
                 </div>
             </article>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC');
+
 html, body, header, main{
     height: 100%;
 }
@@ -22,17 +24,27 @@ article{
 }
 
 #logo{
-    max-width: 50%;
-    margin: 20px 0;
+    max-width: 90%;
+    margin: 20px 0 0 0;
+}
+
+h4 ~ small{
+    position:relative;
+    top: -10px;
 }
 
 ul.navbar-nav{
-    list-style-type: decimal;
-    padding: 0 0 0 20px;
+    padding: 0;
 }
 
 ul ul{
-    list-style-type: lower-latin;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+    padding:5px 0;
 }
 
 .navbar-dark .navbar-nav .nav-item {
@@ -51,6 +63,17 @@ ul ul{
 
 .card-img img{
     max-width: 90%;
+}
+
+pre{
+    padding: 5px 10px;
+    background: #f8f9fa;
+    outline: 2px solid #dee2e6;
+    outline-offset: 5px;
+}
+
+kbd{
+    background-color: #777;
 }
 
 @media (min-width: 992px) {
@@ -80,6 +103,7 @@ ul ul{
     }
 
     #logo{
-        height: 40px;
+        height: 64px;
+        margin: 0;
     }
 }
