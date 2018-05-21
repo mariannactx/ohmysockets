@@ -1,6 +1,6 @@
 <?php
 
-class WebSocketUser {
+abstract class WebSocketUser {
 
   public $socket;
   public $id;
@@ -15,8 +15,13 @@ class WebSocketUser {
   
   public $closed = false;
 
-  function __construct($id, $socket) {
-    $this->id = $id;
+  function __construct($socket) {
     $this->socket = $socket;
+    $this->setId();
   }
+
+  protected function setId(){
+        $this->id = uniqid('u');
+  }
+
 }

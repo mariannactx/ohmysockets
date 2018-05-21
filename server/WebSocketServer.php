@@ -1,5 +1,5 @@
 <?php
-require_once('WebSocketUser.php');
+require_once('User.php');
 
 abstract class WebSocketServer
 {
@@ -170,7 +170,7 @@ abstract class WebSocketServer
 
     protected function connect($socket)
     {
-        $user = new WebSocketUser(uniqid('u'), $socket);
+        $user = new User($socket);
 
         $this->users[$user->id] = $user;
         $this->sockets[$user->id] = $socket;
@@ -481,7 +481,7 @@ abstract class WebSocketServer
             $user->partialMessage = "";
 
             $payload = json_decode($payload);
-            $payload->user = intval($user->socket);
+            $payload->user = $user->id;
             $payload = json_encode($payload);
 
             return $payload;
