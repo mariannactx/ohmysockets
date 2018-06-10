@@ -34,24 +34,29 @@ function newFace(id){
 
     var ball = document.createElement("div");
 
-    ball.innerHTML = "<div id='ballWrapper' class='bounce' style='top:"+places[0].top+"; left:"+places[0].left+";'><div id='"+ id +"'>" +
-        "        <div></div>" +
-        "        <div class='bloom'>" +
-        "            <div class='sparkle'>" +
-        "                <div class='sparkle-line'></div>" +
-        "                <div class='sparkle-line'></div>" +
-        "                <div class='sparkle-line'></div>" +
-        "                <div class='sparkle-line'></div>" +
-        "</div></div></div>";
+    var ballPosition = "top:"+places[0].top+"; left:"+places[0].left;
+    ball.innerHTML = ballStructure(ballPosition, id);
 
-    document.getElementById("allWrapper").appendChild(ball);
+    byId("allWrapper").appendChild(ball);
     places.splice(0, 1);
 
     changeFace(id, "happy");
 }
 
+function ballStructure(position, id){
+    return "<div id='ballWrapper' class='bounce' style='"+position+"'><div id='"+ id +"'>" +
+    "        <div></div>" +
+    "        <div class='bloom'>" +
+    "            <div class='sparkle'>" +
+    "                <div class='sparkle-line'></div>" +
+    "                <div class='sparkle-line'></div>" +
+    "                <div class='sparkle-line'></div>" +
+    "                <div class='sparkle-line'></div>" +
+    "</div></div></div>";
+}
+
 function removeFace(id){
-    var filha = document.getElementById(id);
+    var filha = byId(id);
     var mae = filha.parentNode;
     var avo = mae.parentNode;
 
@@ -60,11 +65,15 @@ function removeFace(id){
         left: mae.style.left
     });
 
-    document.getElementById('allWrapper').removeChild(avo);
+    byId('allWrapper').removeChild(avo);
 }
 
 function changeFace(ball, face){
-    document.getElementById(ball).setAttribute("class", face);
-    document.getElementById(ball).innerHTML = faces[face];
-    document.getElementById(ball).children[0].setAttribute("class", face);
+    byId(ball).setAttribute("class", face);
+    byId(ball).innerHTML = faces[face];
+    byId(ball).children[0].setAttribute("class", face);
+}
+
+function byId(id){
+    return document.getElementById(id);
 }

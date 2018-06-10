@@ -283,8 +283,10 @@
 
 #start{
   position: absolute;
-  /* width: 100px; */
+  width: 200px;
   height: 130px;
   margin-left: 175px;
   margin-top: 75px;
+  background: #ccc;
+  padding: 10px;
 }
