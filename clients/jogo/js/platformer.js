@@ -15,9 +15,9 @@ function initGame() {
         socket.onmessage = function(ev) {
             msg = JSON.parse(ev.data);
 
-            switch (msg){
-                case "move": move(msg.user, msg.key, msg.down); break;
+            switch (msg.type){
                 case "new-player": newPlayer(msg.user, msg.name, msg.color); break;
+                case "move": move(msg.user, msg.key, msg.down); break;
                 case "disconnected": killPlayer(players[msg.user]); break;
             }
         };
@@ -127,15 +127,30 @@ function move(playerId, key, down) {
   }
 
   function updatePlayers(dt) {
-      for(var n in players)
-        updatePlayer(players[n], dt);
+      var player; 
+      for(var n in players){
+        player = players[n];
+
+        if (!player.dead) {
+          updateEntity(player, dt);
+          var monster;
+          for(var m in monsters){
+              monster = monsters[m];
+              if (overlap(player.x, player.y, TILE, TILE, monster.x, monster.y, TILE, TILE))
+                  if ((player.dy > 0) && (monster.y - player.y > TILE / 2))
+                      killMonster(monster);
+          }
+        }
+      }
   }
 
   function updateMonsters(dt) {
-      for(var monster in monsters){
+      var monster;
+      for(var m in monsters){
+          monster = monsters[m];
           if (!monster.dead) {
               updateEntity(monster, dt);
-              var n, max, player;
+              var player;
               for(var n in players){
                   player = players[n];
                   if (overlap(player.x, player.y, TILE, TILE, monster.x, monster.y, TILE, TILE)) {
@@ -146,19 +161,6 @@ function move(playerId, key, down) {
                   }
               }
           }
-      }
-  }
-
-  function updatePlayer(player, dt) {
-      if (!player.dead) {
-          updateEntity(player, dt);
-          var n, max;
-          for(n = 0, max = monsters.length ; n < max ; n++){
-              if (overlap(player.x, player.y, TILE, TILE, monsters[n].x, monsters[n].y, TILE, TILE))
-                  if ((player.dy > 0) && (monsters[n].y - player.y > TILE / 2))
-                      killMonster(monsters[n]);
-          }
-
       }
   }
 
@@ -212,7 +214,6 @@ function move(playerId, key, down) {
     else if (wasright)
       entity.ddx = entity.ddx - friction;
 
-    // console.log(entity.jump);
     if (entity.jump && !entity.jumping && !falling) {
       entity.ddy = entity.ddy - entity.impulse; // an instant big force impulse
       entity.jumping = true;
@@ -299,10 +300,19 @@ function move(playerId, key, down) {
     renderMap(ctx);
     renderTreasure(ctx, frame);
 
-    if(players.length)
+    if(!isEmpty(players))
     renderChars(false, players, ctx, dt);
 
     renderChars(COLOR.SLATE, monsters, ctx, dt);
+  }
+
+  function isEmpty(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return false;
+    }
+
+    return true;
   }
 
   function renderMap(ctx) {

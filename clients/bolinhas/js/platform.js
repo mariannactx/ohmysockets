@@ -40,7 +40,7 @@ function newFace(id){
     byId("allWrapper").appendChild(ball);
     places.splice(0, 1);
 
-    changeFace(id, "happy");
+    changeFace(id, "fine");
 }
 
 function ballStructure(position, id){
@@ -56,6 +56,7 @@ function ballStructure(position, id){
 }
 
 function removeFace(id){
+    console.log(id);
     var filha = byId(id);
     var mae = filha.parentNode;
     var avo = mae.parentNode;
