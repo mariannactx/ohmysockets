@@ -9,8 +9,9 @@ body.row{
     margin:0;
 }
 
-main{
-    overflow:auto
+main.col-lg-10{
+    overflow:auto;
+    padding: 0;
 }
 
 section{
@@ -74,6 +75,13 @@ pre{
 
 kbd{
     background-color: #777;
+}
+
+footer{
+    margin: 20px 0 0 0;
+    padding: 10px;
+    font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+    text-align: center;
 }
 
 @media (min-width: 992px) {

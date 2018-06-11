@@ -94,7 +94,7 @@
                     <h2 class="card-header text-info">Requisitos</h2>
                     <div class="card-body">
                         <ul>
-                            <li>Apache e PHP 7 (<small>veja um tutorial sobre <a href="tutorial">como instalar um servidor web</a></small>)</li>
+                            <li>Apache e PHP 7 <small>(veja um tutorial sobre <a href="tutorial">como instalar um servidor web</a>)</small></li>
 
                         </ul>
                     </div>
@@ -108,11 +108,8 @@
                         <a class="btn btn-outline-danger" href="server.zip">
                             Módulo servidor
                         </a>
-                        <a class="btn btn-outline-danger" href="clients.zip">
-                            Módulo cliente
-                        </a>
                         <a class="btn btn-outline-danger" href="ohmysockets.zip">
-                            Pacote completo!
+                            Módulos servidor e cliente
                         </a>
                     </div>
                 </div>
@@ -122,9 +119,26 @@
                 <div class="card border-light">
                     <h2 class="card-header text-info">Inicialização</h2>
                     <div class="card-body">
-                        <p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Via terminal</th>
+                                    <th>Via browser</th>
+                                </tr>    
+                            </thead>
+                            <tbody>
+                                    
+                            </tbody>
+                        </table>
+                        <p> mac, windows e linux
+                            servidor local
+                            endereço ip na rede local
+                            porta disponível
+                            alterar ip e porta no arquivo run.php
+                            rodar script no terminal e explicar saídas (websockets rodando, cliente conectado e desconectado)
+                            alterar endereço ws:// no common.js
                             Entrar na pasta <kbd>cd pasta</kbd><br/>
-                            Inicializar conexão <kbd> php server.php</kbd><br/>
+                            Inicializar conexão <kbd> php run.php</kbd><br/>
                             <kbd> php server.php</kbd>
                         </p>
                     </div>
@@ -232,6 +246,10 @@ socket.send('{"prop":"value"}'); //string em formato JSON
             <h2>Jogo multiplayer</h2>
         </section>
 
+        <footer class="bg-info text-white">
+            Trabalho desenvolvido como parte do projeto de conclusão de curso 
+            em Comunicação em Mídias Digitais na Universidade Federal da Paraíba.
+        </footer>
     </main>
 </body>
 </html>
