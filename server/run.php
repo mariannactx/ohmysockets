@@ -1,7 +1,7 @@
 <?php
-require_once('Server.php');
+require_once('autoloader.php');
 
-$server = new Server("192.168.15.6", '47401');
+$server = new Server("192.168.0.18", '47401');
 
 try {
     $server->run();
