@@ -107,7 +107,7 @@ abstract class WebSocketServer
                         continue;
                     } else {
                         $this->connect($client);
-                        $this->stdout("Client connected: $client");
+                        $this->stdout("Client connected: $client.");
                     }
 
                 } else {
@@ -131,6 +131,7 @@ abstract class WebSocketServer
                                 
                                 $this->disconnect($socket, true, $sockErrNo); // disconnect before clearing error, in case someone with their own implementation wants to check for error conditions on the socket.
                                 $errorMessage = "The error '$sockErrNo' occurred on socket $socket";
+                                break;
                             default:
                                 $errorMessage = "Unknown error: '$sockErrNo' ". socket_strerror($sockErrNo);
                         }
@@ -157,7 +158,9 @@ abstract class WebSocketServer
                                 
                             if($handshake->status){
                                 $this->connected($user);
+                                $this->stdout("User: $user->id.");
                                 $this->stdout($handshake->response);
+                                
                             } else {
                                 $this->disconnect($user->socket);
                             }
