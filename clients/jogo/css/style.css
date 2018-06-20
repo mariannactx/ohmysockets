@@ -12,6 +12,10 @@ h2{
     text-align: center;
 }
 
+.main-container{
+    height: auto;
+}
+
 .block {
     background: #394264;
     border-top-left-radius: 5px;
@@ -58,6 +62,12 @@ h2{
     border-radius: 100%;
     margin: 5px;
     -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.base-colors .color:checked {
+    border: #fff solid;
 }
 
 .subscribe.button{
@@ -80,12 +90,8 @@ h2{
 }
 
 img#logo {
-    position: absolute;
-    width: 115px;
-    border-radius: 100%;
-    left: 50%;
-    top: 146px;
-    margin: 0 0 0 -62px;
+    margin: 20px;
+    height: 50%;
 }
 
 img#ranking{

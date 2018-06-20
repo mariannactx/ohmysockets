@@ -16,9 +16,15 @@ function initGame() {
             msg = JSON.parse(ev.data);
 
             switch (msg.type){
-                case "new-player": newPlayer(msg.user, msg.name, msg.color); break;
-                case "move": move(msg.user, msg.key, msg.down); break;
-                case "disconnected": killPlayer(players[msg.user]); break;
+                case "new-player": 
+                  newPlayer(msg.user, msg.name, msg.color); 
+                  break;
+                case "move": 
+                  move(msg.user, msg.key, msg.down); 
+                break;
+                case "disconnected": 
+                  killPlayer(players[msg.user]); 
+                break;
             }
         };
 
