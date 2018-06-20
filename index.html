@@ -52,16 +52,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#demo">
-                        - <br/>Demo
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#creditos">
-                        - <br/>Créditos
-                    </a>
-                </li>
             </ul>
             </div>
         </nav>
@@ -94,7 +84,11 @@
                     <h2 class="card-header text-info">Requisitos</h2>
                     <div class="card-body">
                         <ul>
-                            <li>Apache e PHP 7 <small>(veja um tutorial sobre <a href="tutorial">como instalar um servidor web</a>)</small></li>
+                            <li>Sistema operacional <a href="https://www.ubuntu.com/download/desktop">Ubuntu</a></li>
+                            <li>Apache e PHP 7 <small> (siga o tutorial sobre <a href="https://www.digitalocean.com/community/tutorials/como-instalar-a-pilha-linux-apache-mysql-php-lamp-no-ubuntu-16-04-pt">como instalar um servidor web</a>)
+                            </small>
+                            </li>
+                            <li> Rede local que permita acesso pelo IP </p>
 
                         </ul>
                     </div>
@@ -119,28 +113,25 @@
                 <div class="card border-light">
                     <h2 class="card-header text-info">Inicialização</h2>
                     <div class="card-body">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Via terminal</th>
-                                    <th>Via browser</th>
-                                </tr>    
-                            </thead>
-                            <tbody>
-                                    
-                            </tbody>
-                        </table>
-                        <p> mac, windows e linux
-                            servidor local
-                            endereço ip na rede local
-                            porta disponível
-                            alterar ip e porta no arquivo run.php
-                            rodar script no terminal e explicar saídas (websockets rodando, cliente conectado e desconectado)
-                            alterar endereço ws:// no common.js
-                            Entrar na pasta <kbd>cd pasta</kbd><br/>
-                            Inicializar conexão <kbd> php run.php</kbd><br/>
-                            <kbd> php server.php</kbd>
-                        </p>
+                        <p> Primeiro, é necessário descobrir seu IP dentro da rede. Existem várias formas para isso, uma delas
+                            é usar o comando <kbd style="white-space: nowrap">ifconfig | grep inet</kbd> no terminal. O resultado será 
+                            algo do tipo: 
+                            <pre>inet 192.168.0.18  netmask 255.255.255.0  broadcast 192.168.0.255</pre>
+                            No exemplo acima, <i>192.168.9.18</i> é o seu ip.
+                            <p> Depois, escolhemos a porta. Ela pode ser um número aleatório de 5 dígitos. Usaremos a porta <i>47401</i>.
+                            Para que a conexão funcione, essa porta não pode estar ocupada e precisar estar liberada pelo firewall, caso esteja ativado.
+                            Verificaremos a disponibilidade da porta com o seguinte comando: <kbd>sudo netstat -ptln | grep 47401 </kbd>. Se não aparecer 
+                            nenhum resultado, tudo certo! A porta está disponível.</p>
+                            <p> Para terminar a configuração, basta alterar os arquivos <i>common.js</i> e o <i>run.php</i> com o IP e a porta nos locais indicados. Tá tudo explicado na seção abaixo!</p>
+                            <p> Com o servidor confirgurado, é hora de executar a conexão! Vá para o terminal, encontre o diretório onde está a aplicação e execute o comando
+                            <kbd>php server/run.php</kbd>. Você verá algo como isto:</p>
+                            <pre>
+Server started
+Listening on: 192.168.0.18:47401
+Master socket: Resource id #7
+                            </pre>
+                            <p><span class="badge badge-pill badge-danger">Atenção!</span> Não feche o terminal! Fechá-lo vai encerrar a conexão.</p>
+                            <p>Entenda um pouco mais do funcionamento da aplicação antes de partir para os exemplos na próxima seção.</p>
                     </div>
                 </div>
             </article>
@@ -196,59 +187,50 @@ socket.send('{"prop":"value"}'); //string em formato JSON
                         </p>
 
                         <h4>O protocolo websockets</h4>
-                        <p>Perceba que a url utilizada na API não começa com o habitual <kbd>http://</kbd>, mas com <kbd>ws://</kbd></p>.
-                        <p> HTTP com upgrade para WS </p>
-                        <video width="100%" src="vid/websockets-network-ratchet.mp4" controls></video>
+                        <p style="display: inline-block; float:left; width: 50%; padding: 10px">
+                        Perceba que a url utilizada na API não começa com o habitual <kbd>http://</kbd>, 
+                        mas com <kbd>ws://</kbd>. Na aba <i>Network</i>, onde podem ser vistas as requisições
+                        feitas pela página, podemos filtrar apenas as que são <i>websockets</i> (uma mesma aplicação pode manter
+                        várias dessas conexões abertas). Nas aplicações de exemplo, abrirá apenas uma.
+                        Com essa ferramenta é possível ver os cabeçalhos da requisição e acompanhar os dados que transitam por ela.
+                        O vídeo ao lado é uma rápida demonstração do exemplo das carinhas - descrito melhor na próxima seção.
+                        </p>
+                        <video width="50%" style="float:right; display: inline;" src="vid/websockets-network.mp4" controls></video>
+                   
+                        
                     </div>
                 </div>
             </article>
+
 
             <article id="exemplos">
                 <div class="card border-light">
                     <h2 class="card-header text-info">Exemplos</h2>
                     <div class="card-body">
+                        <p class="lead">
+                            De modo geral, os exemplos possuem dois tipos de aplicações: a <i>aplicação mãe</i> e a <i>aplicação usuário</i>. Cada usuário vai interagir na 
+                            seu dispositivo e a aplicação mãe vai exibir o resultado dessas interações.
+                        </p>
                         <h3>Carinhas</h3>
-                        <p class="bg-dark card-img">
-                            <img src="img/carinhas.png">
-                        </p>
                         <p>
-                            For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+                            Um exemplo muito muito simples para votação online. Cada usuário vai poder escolher a carinha que representa sua opnião e poderá ver, junto com a dos outros usuários, sua respectiva carinha. É encontrado na pasta "carinhas" do repositório.
                         </p>
-
-                        <hr class="my-4">
-                        <h3>Exemplo: Jogo multiplayer</h3>
-
-                        <p class="bg-dark card-img">
-                            <img src="img/jogo.png">
-                        </p>
-                        <p>
-                            For example, <code>&lt;section&gt;</code> should be wrapped as inline.
-                            <kbd> php server.php </kbd>
-                        </p>
+                        <video width="48%" style="float:left; margin: 0 1%;" src="vid/carinhas.mp4" controls></video>
+                        <video width="48%" style="float:right; margin: 0 1%;" src="vid/carinhas-2.mp4" controls></video>
+                        <div style="clear:both;"></div>
+                        <hr class="my-4" style="margin: 10px 0">
+                        <h3 style="margin-bottom: 30px;">Jogo multiplayer</h3>
+                        
+                        <video width="80%" style="margin: 0 10%;" src="vid/jogo.mp4" controls></video>
+                        
                     </div>
                 </div>
             </article>
         </section>
-
-        <section id="demo">
-            <h1 class="display-4">Demo</h1>
-            <hr class="my-4">
-            <video src="index.html"></video>
-        </section>
-
-        <section id="creditos">
-            <h1 class="display-4">Créditos</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-
-            <h2>O servidor</h2>
-            <h2>Carinhas</h2>
-            <h2>Jogo multiplayer</h2>
-        </section>
-
         <footer class="bg-info text-white">
             Trabalho desenvolvido como parte do projeto de conclusão de curso 
-            em Comunicação em Mídias Digitais na Universidade Federal da Paraíba.
+            em Comunicação em Mídias Digitais na Universidade Federal da Paraíba. 
+            <br/>Baseado na biblioteca <a href="https://github.com/ghedipunk/PHP-Websockets">PHP-Websockets</a>
         </footer>
     </main>
 </body>
