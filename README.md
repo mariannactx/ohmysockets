@@ -9,8 +9,8 @@ Websockets é o recurso que tornou possível usar o browser para abrir uma conex
 
 ## Módulos
 
-#Servidor
+### Servidor
 Cria e mantém nossa conexão além de gerenciar os usuários que se conectarem ao nosso servidor. Inicializado com um quase nada de comandos no terminal.
 
-#Cliente
+### Cliente
 Apresenta dois exemplos simples e reutilizáveis para quem quer saber a opinião de sua audiência em tempo real ou competir com os amigos num jogo de plataforma.
