@@ -1,4 +1,4 @@
-![Alt text](/img/omskts.png | width=100)
+![Alt text](/img/omskts-s.png)
 
 ### Oh my god. it's so simple to use websockets!
 
